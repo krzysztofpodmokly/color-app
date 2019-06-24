@@ -1,12 +1,10 @@
-let defaultState = {
-    color: 'greens'
-}
+import { CHANGE_COLOR } from '../actions/types';
 
-export default (state = defaultState, action) => {
+export default (state = 'green', action) => {
     switch (action.type) {
-        case 'CHANGE_COLOR':
-            return { ...state, color: action.payload };
+        case CHANGE_COLOR:
+            return action.payload;
         default:
             return state
-    }
-}
+    };
+};
