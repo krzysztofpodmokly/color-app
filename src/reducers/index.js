@@ -3,4 +3,4 @@ import colorReducer from './colorReducer';
 
 export default combineReducers({
     color: colorReducer
-})
+});

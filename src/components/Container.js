@@ -1,19 +1,17 @@
 import React from 'react';
 import Box from './Box';
 import { connect } from 'react-redux';
-import * as actions from '../actions';
+import { loadColor } from '../actions';
 
-class Container extends React.Component{
-    render() {
-        console.log(this.props)
-        return (
-            <Box handleClick={this.props.loadColor} color={this.props.color} />
-        );
-    }
-}
+const Container = (props) => {
+    return (
+        <Box handleClick={props.loadColor} color={props.color} />
+    );
+};
 
-const mapStateToProps = (state) => {
-    return state
-}
+const mapStateToProps = ({ color }) => {
+    // state destructuring
+    return { color } 
+};
 
-export default connect(mapStateToProps, actions)(Container);
+export default connect(mapStateToProps, { loadColor })(Container);
